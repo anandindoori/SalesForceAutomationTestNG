@@ -22,28 +22,29 @@ public class TestBase {
 
 	public TestBase() {
 
-		{
-
-			prop = new Properties();
-			try {
-				FileInputStream ip = new FileInputStream("/Users/anandindoori/Desktop/gitHub/SalesForceAutomationTestNG/src/main/java/salesforce/crm/qa/config/config.properties");
-					;
-				prop.load(ip);
-			} catch (FileNotFoundException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-
-		}
+//		{
+//
+//			prop = new Properties();
+//			try {
+//				FileInputStream ip = new FileInputStream("/Users/anandindoori/Desktop/gitHub/SalesForceAutomationTestNG/src/main/java/salesforce/crm/qa/config/config.properties");
+//					;
+//				prop.load(ip);
+//			} catch (FileNotFoundException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			} catch (IOException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+//
+//		}
 		
 	}
 	
 	public static void initialization() {
 		
-		String browser = prop.getProperty("browser");
+		//String browser = prop.getProperty("browser");
+		String browser = "chrome";
 		
 		
 			
@@ -70,7 +71,7 @@ public class TestBase {
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TestUtil.IMPLICIT_WAIT));
 			driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(TestUtil.PAGE_LOAD_TIMEOUT));
-			driver.get(prop.getProperty("url"));
+			driver.get("https://login.salesforce.com/");
 		 
 		}
 	
